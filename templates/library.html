@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{%block content%}
+
+
+<h1>Content</h1>
+
+
+  <div class="row">
+    <div class="col-sm-9">
+      {% for item in data%}
+        <div class="col-sm-3 item">
+           <h4>{{item.category}}</h4>
+          <video width="250" height="240" controls>
+          <source src="/{{item.video}}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <input type="checkbox" id="data_{{item.id}}" name="{{item}}" onclick="getid('{{item.id}}')" />
+          </div>
+
+      {% endfor %}
+    </div>
+    <form action="/create_package/" method="post">
+    <div class="col-sm-3 package_form">
+      <h3>Package Details</h3>
+      <div>{{form.pack_name}}</div><br/>
+      <div>{{form.location}}</div><br/>
+      <div>{{form.business_type}}</div><br/>
+      <div><input type="hidden" name="items" id="items"></div>
+        <input type="submit" value='create Package'/>
+    </div>
+    </form>
+
+
+    <div>
+    <form action="" method="post">
+    <div class="col-sm-3 package_form">
+      <h3>Add Content</h3>
+      <div><input type="" name=""></div><br/>
+      <div>{{form.location}}</div><br/>
+      <div>{{form.business_type}}</div><br/>
+      <div><input type="hidden" name="items" id="items"></div>
+        <input type="submit" value='Add Content'/>
+    </div>
+    </form>
+    </div>
+  </div>
+
+<script type="text/javascript">
+var allVals = [];
+function getid(id)
+{
+   if ($('#data_'+id).prop('checked')){
+      allVals.push(id)
+   }else{
+    allVals.pop(id)
+   }
+   $('#items').val(allVals)
+}
+</script>
+
+{%endblock%}

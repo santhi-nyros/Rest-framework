@@ -1,0 +1,23 @@
+{% extends "cbase.html" %}
+{% load staticfiles %}
+{%block content%}
+<h5>{{ status }}</h5>
+<h6>{{ error }}</h6>
+<div class="box">
+<h4>{{user.username}} Profile</h4>
+<form method="post" action="" enctype="multipart/form-data">
+	<div>{{form.first_name}}</div><br>
+    <div style="color:red">{{form.first_name.errors}}</div>
+    <div>{{form.last_name}}</div><br>
+    <div style="color:red">{{form.last_name.errors}}</div>
+    <div>{{form.avatar}}</div><br>
+    <div style="color:red">{{form.avatar.errors}}</div>
+    <div>{{form.category}}</div><br>
+    <div style="color:red">{{form.category.errors}}</div>
+    <div>{{form.location}}</div><br>
+    <div style="color:red">{{form.location.errors}}</div>
+    <input type="submit" value="Submit" class="btn">
+
+</form>
+</div>
+{%endblock%}

@@ -1,0 +1,21 @@
+{% extends "cbase.html" %}
+{% load staticfiles %}
+{%block content%}
+<h5>{{ status }}</h5>
+<h6>{{ error }}</h6>
+<div class="box">
+<h4>{{user.username}} Profile</h4>
+<div>
+
+    <div>
+    	<img src="/{{profile.avatar}}"  width="100" height="100" />
+    </div>
+    <h5><span>First name :</span>{{profile.first_name}}</h5>
+    <h5><span>Last name :</span>{{profile.last_name}}</h5>
+    <h5><span>Category :</span>{{profile.category.category}}</h5>
+    <h5><span>Location :</span>{{profile.location}}</h5>
+</div>
+
+<a href="/consumers/profile/">Edit Profile</a>
+</div>
+{%endblock%}

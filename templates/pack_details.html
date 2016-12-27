@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{%block content%}
+
+
+
+
+<div class="row">
+  <div class="col-sm-9">
+      <h1>{{package.package_name}}</h1>
+      <table class="table" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Video</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for pack in packs%}
+          <tr>
+            <td><h5>{{pack.item}}</h5></td>
+            <td><img src="/{{pack.item.image}}"/></td>
+            <td>
+              <video width="250" height="240" controls>
+                <source src="/{{pack.item.video}}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+  </div>
+</div>
+
+<!-- <script type="text/javascript">
+var allVals = [];
+function getid(id)
+{
+   if ($('#data_'+id).prop('checked')){
+      allVals.push(id)
+   }else{
+    allVals.pop(id)
+   }
+   $('#items').val(allVals)
+
+}
+</script> -->
+
+{%endblock%}
+

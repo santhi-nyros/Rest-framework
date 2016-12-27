@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{%block content%}
+<div class="box">
+
+<div style="color:red;">{{error}}</div>
+<form action="/" method="post">
+
+	<h1>Sign In</h1>
+
+    <div>{{form.username}}</div><br>
+    <div style="color:red">{{form.username.errors}}</div>
+    <div>{{form.password}}</div>
+    <div style="color:red">{{form.password.errors}}</div>
+
+    <input type="submit" value="Submit" class="btn">
+
+</form>
+</div> <!-- End Box -->
+
+
+<!-- <p>Forgot your password? <u style="color:#f1c40f;">Click Here!</u></p> -->
+
+{% endblock %}

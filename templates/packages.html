@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{%block content%}
+
+
+
+
+<div class="row">
+  <div class="col-sm-9">
+      <h1>Pacakges</h1>
+      <table class="table" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Business type</th>
+            <th>Schedule</th>
+            <th>View Package</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for package in packages%}
+          <tr>
+            <td>{{package.package_name}}</td>
+           <td>{{package.location}}</td>
+           <td>{{package.business_type}}</td>
+           <td>{{package.scheduled_date}}</td>
+           <td><a href="/view_pack/{{package.id}}/">View</a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+  </div>
+</div>
+{%endblock%}
+

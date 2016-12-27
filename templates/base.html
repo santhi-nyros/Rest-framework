@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Api</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static '/static/providers/css/style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
+  <script>
+    // Enable pusher logging - don't include this in production
+    // Pusher.logToConsole = true;
+
+    // var pusher = new Pusher('a0d3811166be0c4ec031', {
+    //   encrypted: true
+    // });
+
+    // var channel = pusher.subscribe('test_channel');
+    // channel.bind('my_event', function(data) {
+    //   alert(data.message);
+    // });
+  </script>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">{{ user.username }}</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/home">Home</a></li>
+          <li><a href="/library">Library</a></li>
+          <li><a href="/package_view">Packages</a></li>
+          <li><a href="/logout/">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    {% endif %}
+
+    {%block content%}
+
+    {%endblock%}
+</body>
+</html>
