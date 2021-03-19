@@ -24,7 +24,7 @@ django-push-notifications==1.4.1
 django-pusherable==0.1.0
 django-sekizai==0.10.0
 django-treebeard==4.0.1
-djangorestframework==3.4.7
+djangorestframework==3.11.2
 easy-thumbnails==2.3
 enum34==1.1.6
 google-api-python-client==1.5.3
