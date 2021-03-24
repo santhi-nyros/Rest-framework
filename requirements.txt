@@ -43,7 +43,7 @@ pycparser==2.16
 pytz==2016.7
 redis==2.10.5
 requests==2.11.1
-rsa==3.4.2
+rsa==4.1
 schedule==0.3.2
 simplejson==3.8.2
 six==1.10.0
