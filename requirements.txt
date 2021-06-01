@@ -49,5 +49,5 @@ simplejson==3.8.2
 six==1.10.0
 tzlocal==1.2.2
 uritemplate==0.6
-urllib3==1.18
+urllib3==1.26.5
 wsgiref==0.1.2
